@@ -10,7 +10,7 @@
  */
 class Solution {
     public boolean isPalindrome(ListNode head) {
-        //if (head == null || head.next == null) return true;
+        if (head == null || head.next == null) return true;
 
         // Step 1: Find middle (slow & fast)
         ListNode slow = head;
