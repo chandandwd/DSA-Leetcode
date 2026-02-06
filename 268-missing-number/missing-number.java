@@ -8,9 +8,8 @@ class Solution {
         for(int x : nums){
             sum += x;
         }
-        if(sum < m)
         return (m-sum);
 
-        return nums.length;
+       
     }
 }
