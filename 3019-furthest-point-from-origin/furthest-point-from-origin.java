@@ -20,7 +20,7 @@ class Solution {
     
 
     for(int i = 0; i<s.length();i++){
-        if(s.charAt(i) == 'L') max = max-1;
+        if(s.charAt(i) == 'L') max -=1; 
         else max +=1;
     }
     if (max<0) return max*(-1);
