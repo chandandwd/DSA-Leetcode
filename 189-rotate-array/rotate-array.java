@@ -8,12 +8,12 @@ class Solution {
         reverse(nums, k, n - 1);
     }
 
-    void reverse(int[] a, int l, int r) {
-        while (l < r) {
+    void reverse(int[] a, int i, int l) {
+        while (i<l) {
             int t = a[l];
-            a[l] = a[r];
-            a[r] = t;
-            l++; r--;
+            a[l] = a[i];
+            a[i] = t;
+            i++; l--;
         }
     }
 }
