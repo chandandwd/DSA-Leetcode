@@ -1,6 +1,6 @@
 class Solution {
     public boolean rotateString(String s, String goal) {
-        ArrayList<String> list = new ArrayList<>();
+           ArrayList<String> list = new ArrayList<>();
 
         for(int i = 0; i<s.length(); i++)
             list.add(s.charAt(i)+"");
@@ -18,5 +18,6 @@ class Solution {
         }
         return false;
         
+   
     }
 }
