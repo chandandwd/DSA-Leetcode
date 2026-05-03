@@ -1,23 +1,11 @@
 class Solution {
-    public boolean rotateString(String s, String goal) {
-           ArrayList<String> list = new ArrayList<>();
-
-        for(int i = 0; i<s.length(); i++)
-            list.add(s.charAt(i)+"");
-        
-        for(int i = 0; i<s.length(); i++){
-            String o = "";
-            for(int j = 1; j<list.size(); j++){
-                o = o + list.get(j);
-            }
-            o = o + list.get(0);
-            String a = list.remove(0);
-            list.add(a);
-            if(o.equals(goal))
-                return true;
-        }
-        return false;
-        
-   
+    public boolean rotateString(String s1, String goal) {
+        int i = 0;
+     while(i != s1.length()){
+        s1 = s1.substring(1)+s1.charAt(0);
+        if(s1.equals(goal)) return true;
+        i++;
+     }
+     return false;
     }
 }
