@@ -1,28 +1,18 @@
 class Solution {
     public int singleNonDuplicate(int[] arr) {
-        int l = 0, h = arr.length - 1, mid;
+        int n = arr.length;
+        int l = 1, h = n - 2;
+        
+        if(n == 1 || arr[0] != arr[1]) return arr[0];
+        if(arr[n-1] != arr[n-2]) return arr[n-1];
 
         while (l <= h) {
-            mid = l + (h - l) / 2;
-
-            if (l == h)
-                return arr[mid];
-            if (mid + 1 <= h && arr[mid] == arr[mid + 1]) {
-                if ((h - mid - 1) % 2 == 1)
-                    l = mid + 2;
-                else
-                    h = mid - 1;
-            }
-            else if (mid - 1 >= l && arr[mid] == arr[mid - 1]) {
-                if ((h - mid) % 2 == 1)
-                    l = mid + 1;
-                else
-                    h = mid - 2;
-            }
-            else {
-                return arr[mid];
-            }
+            int mid = l + (h - l) / 2;
+            if(arr[mid] != arr[mid-1] && arr[mid] != arr[mid+1]) return arr[mid];
+            else if((mid %2 == 0 && arr[mid] == arr[mid-1]) || (mid%2 == 1 && arr[mid] == arr[mid+1])) h = mid -1;
+            else l = mid+1; 
         }
+
 
         return -1;
     }
